@@ -1,13 +1,11 @@
 # AGENTS
 
-Diese Repos verwenden Pre-Commit Hooks, die sich an
-`/Users/aerben/repositories/it-erben/components/linters` orientieren:
+Dieses Repo verwendet Linter:
 
-- Markdown: `markdownlint-cli2` mit `--fix`
+- Markdown: `markdownlint-cli2` mit `--fix`, Line Length max 80
 - YAML: `yamllint` (extends relaxed, line-length max 140)
 - Links: `lychee` mit `--accept 429,200`, `--exclude http://localhost.*`,
   `--exclude-path .npm-cache`, `--max-concurrency 4`, `--retry-wait-time 2`,
   `--timeout 20`, `--cache`
 
-Bitte halte `.pre-commit-config.yaml` und diese Einstellungen synchron, wenn du
-die Linter- oder Link-Check-Regeln aenderst.
+- Lasse nach jeder Änderung `pre-commit` laufen und behebe alle Änderungen selbstständig.
