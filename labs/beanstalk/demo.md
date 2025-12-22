@@ -1,25 +1,37 @@
 # Demo
 
 ## Neue Anwendung erstellen
+
 - In der Elastic Beanstalk Konsole klicken Sie auf "Create a new application".
 - Geben Sie einen Namen für Ihre Anwendung ein, z.B. "MyFirstEBApp".
-- Optional: Geben Sie eine Beschreibung für Ihre Anwendung ein, z.B. "Dies ist eine Beispielanwendung für AWS Elastic Beanstalk".
+- Optional: Geben Sie eine Beschreibung für Ihre Anwendung ein, z.B. "Dies ist
+  eine Beispielanwendung für AWS Elastic Beanstalk".
 
 ## Neue Umgebung erstellen
+
 - Klicken Sie auf "Create a new environment".
-- Wählen Sie "Web server environment" aus, da wir eine Webanwendung bereitstellen möchten.
+- Wählen Sie "Web server environment" aus, da wir eine Webanwendung
+  bereitstellen möchten.
 
 ## Plattform und Konfiguration auswählen
-- Wählen Sie die gewünschte Plattform aus. Für dieses Beispiel nehmen wir **Node.js**.
-    - Plattform: Node.js
-    - Platform Branch: Node.js (aktuellste Version aussuchen)
-    - Platform Version: (aktuellste Version aussuchen)
-- Optional: Sie können "Configure more options" auswählen, um erweiterte Einstellungen vorzunehmen, aber für diese Demonstration lassen wir die Standardoptionen unverändert.
+
+- Wählen Sie die gewünschte Plattform aus. Für dieses Beispiel nehmen wir
+  **Node.js**.
+  - Plattform: Node.js
+  - Platform Branch: Node.js (aktuellste Version aussuchen)
+  - Platform Version: (aktuellste Version aussuchen)
+- Optional: Sie können "Configure more options" auswählen, um erweiterte
+  Einstellungen vorzunehmen, aber für diese Demonstration lassen wir die
+  Standardoptionen unverändert.
 
 ## Anwendungscode hochladen
+
 - Unter "Application code" wählen Sie "Upload your code".
-- Klicken Sie auf "Choose file" und wählen Sie eine Beispielanwendung aus, die Sie vorbereitet haben (z.B. eine einfache Node.js-App als ZIP-Datei).
-- Falls Sie keine Beispielanwendung haben, können Sie den folgenden Code in eine Datei namens `app.js` schreiben, diese zippen und hochladen:
+- Klicken Sie auf "Choose file" und wählen Sie eine Beispielanwendung aus, die
+  Sie vorbereitet haben (z.B. eine einfache Node.js-App als ZIP-Datei).
+- Falls Sie keine Beispielanwendung haben, können Sie den folgenden Code in eine
+  Datei namens `app.js` schreiben, diese zippen und hochladen:
+
 ```javascript
 const http = require('http');
   
@@ -38,13 +50,16 @@ const http = require('http');
 - Packen Sie `app.js` in eine ZIP-Datei namens `app.zip`.
 
 ## Konfiguration überprüfen
-- Überprüfen Sie die Standardkonfigurationen wie VPC, EC2-Instanztyp, etc. In der Regel sind die Standardwerte für eine erste Bereitstellung ausreichend.
-- Beispielkonfigurationen:
-    - VPC: Default VPC
-    - Instance Type: t2.micro (Free Tier)
-    - Capacity: Single instance (Standard)
 
-Es kann hier nötig sein, erst noch eine IAM-Rolle für die EC2-Instanzen anzulegen. Die Rolle braucht eine Trust Relationship zu ec2 und folgende Policy:
+- Überprüfen Sie die Standardkonfigurationen wie VPC, EC2-Instanztyp, etc. In
+  der Regel sind die Standardwerte für eine erste Bereitstellung ausreichend.
+- Beispielkonfigurationen:
+  - VPC: Default VPC
+  - Instance Type: t2.micro (Free Tier)
+  - Capacity: Single instance (Standard)
+
+Es kann hier nötig sein, erst noch eine IAM-Rolle für die EC2-Instanzen
+anzulegen. Die Rolle braucht eine Trust Relationship zu ec2 und folgende Policy:
 
 ```json
 {
@@ -104,9 +119,15 @@ Es kann hier nötig sein, erst noch eine IAM-Rolle für die EC2-Instanzen anzule
 ```
 
 ## Erstellen und Bereitstellen
+
 - Klicken Sie auf "Create environment".
-- Warten Sie, bis die Umgebung erstellt und die Anwendung bereitgestellt ist. Dies kann einige Minuten dauern.
+- Warten Sie, bis die Umgebung erstellt und die Anwendung bereitgestellt ist.
+  Dies kann einige Minuten dauern.
 
 ## Zugriff auf die Anwendung
-- Nach erfolgreicher Bereitstellung sehen Sie eine URL in der Konsole, über die Ihre Anwendung erreichbar ist, z.B. `http://myfirstebapp-env.eba-xyz123.us-west-2.elasticbeanstalk.com`.
-- Öffnen Sie die URL in Ihrem Browser, um zu überprüfen, ob die Anwendung erfolgreich bereitgestellt wurde. Sie sollten die Meldung "Hello World" sehen.
+
+- Nach erfolgreicher Bereitstellung sehen Sie eine URL in der Konsole, über die
+  Ihre Anwendung erreichbar ist, z.B.
+  `http://myfirstebapp-env.eba-xyz123.us-west-2.elasticbeanstalk.com`.
+- Öffnen Sie die URL in Ihrem Browser, um zu überprüfen, ob die Anwendung
+  erfolgreich bereitgestellt wurde. Sie sollten die Meldung "Hello World" sehen.

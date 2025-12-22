@@ -2,18 +2,24 @@
 
 ## Erstes Beispiel
 
-### AWS Management Console öffnen
-- Melden Sie sich bei der [AWS Management Console](https://aws.amazon.com/console/) an.
+### AWS Management Console öffnen (SQS)
+
+- Melden Sie sich bei der [AWS Management
+  Console](https://aws.amazon.com/console/) an.
 - Suchen Sie in der Services-Liste nach "Lambda" und klicken Sie darauf.
 
-### Erstellen einer neuen Lambda-Funktion
+### Erstellen einer neuen Lambda-Funktion (SQS)
+
 - Klicken Sie auf "Create function".
 - Wählen Sie "Author from scratch".
 - Geben Sie der Funktion einen Namen, z.B. "HelloWorldFunction".
-- Wählen Sie unter "Runtime" die Sprache aus, die Sie verwenden möchten (z.B. Python 3.12).
-- Wählen Sie "Create a new role with basic Lambda permissions" unter "Permissions".
+- Wählen Sie unter "Runtime" die Sprache aus, die Sie verwenden möchten (z.B.
+  Python 3.12).
+- Wählen Sie "Create a new role with basic Lambda permissions" unter
+  "Permissions".
 
-### Schreiben des Funktionscodes
+### Schreiben des Funktionscodes (SQS)
+
 - Im Abschnitt "Function code" fügen Sie folgenden Code in den Code-Editor ein:
 
   ```python
@@ -24,10 +30,12 @@
       }
   ```
 
-### Bereitstellen der Funktion
+### Bereitstellen der Funktion (SQS)
+
 - Klicken Sie auf "Deploy".
 
-### Testen der Funktion
+### Testen der Funktion (SQS)
+
 - Klicken Sie auf "Test".
 - Erstellen Sie ein neues Testereignis mit dem Namen "TestEvent".
 - Klicken Sie auf "Create" und dann auf "Test".
@@ -36,17 +44,22 @@
 ## SQS-Beispiel
 
 ### AWS Management Console öffnen
-- Melden Sie sich bei der [AWS Management Console](https://aws.amazon.com/console/) an.
+
+- Melden Sie sich bei der [AWS Management
+  Console](https://aws.amazon.com/console/) an.
 - Suchen Sie in der Services-Liste nach "Lambda" und klicken Sie darauf.
 
 ### Erstellen einer neuen Lambda-Funktion
+
 - Klicken Sie auf "Create function".
 - Wählen Sie "Author from scratch".
 - Geben Sie der Funktion einen Namen, z.B. "SQSLambdaFunction".
-- Wählen Sie unter "Runtime" die Sprache aus, die Sie verwenden möchten (z.B. Python 3.8).
+- Wählen Sie unter "Runtime" die Sprache aus, die Sie verwenden möchten (z.B.
+  Python 3.8).
 - Wählen Sie "Create a new role with basic Lambda permissions".
 
 ### Schreiben des Funktionscodes
+
 - Im Abschnitt "Function code" fügen Sie folgenden Code in den Code-Editor ein:
 
   ```python
@@ -64,9 +77,11 @@
   ```
 
 ### Bereitstellen der Funktion
+
 - Klicken Sie auf "Deploy".
 
 ### Erstellen einer SQS-Warteschlange
+
 - Gehen Sie zur SQS-Konsole.
 - Klicken Sie auf "Create Queue".
 - Wählen Sie "Standard Queue".
@@ -74,9 +89,12 @@
 - Klicken Sie auf "Create Queue".
 
 ### Rolle anpassen
-Füge die Permission "AWSLambdaSQSQueueExecutionRole" zur Policy der Execution-Role der Lambda-Funktion hinzu.
+
+Füge die Permission "AWSLambdaSQSQueueExecutionRole" zur Policy der
+Execution-Role der Lambda-Funktion hinzu.
 
 ### Ereignisquelle hinzufügen
+
 - Gehen Sie zum Abschnitt "Configuration" Ihrer Lambda-Funktion.
 - Klicken Sie auf "Add trigger".
 - Wählen Sie "SQS" als Trigger-Typ.
@@ -84,7 +102,9 @@ Füge die Permission "AWSLambdaSQSQueueExecutionRole" zur Policy der Execution-R
 - Klicken Sie auf "Add".
 
 ### Testen der Funktion
+
 - Gehen Sie zur SQS-Konsole und wählen Sie Ihre Warteschlange aus.
 - Klicken Sie auf "Send and receive messages".
 - Senden Sie eine Testnachricht, z.B. "Hello from SQS".
-- Überprüfen Sie die Logs Ihrer Lambda-Funktion, um sicherzustellen, dass die Nachricht verarbeitet wurde.
+- Überprüfen Sie die Logs Ihrer Lambda-Funktion, um sicherzustellen, dass die
+  Nachricht verarbeitet wurde.

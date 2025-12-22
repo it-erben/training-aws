@@ -1,13 +1,17 @@
 # Demo
 
 ## Standard-Dashboards zeigen
-Ein Einstieg in die Funktionen von CloudWatch sind die eingebauen Dashboards. Zeigen Sie mindestens die Dashboards für EC2 und Lambda.  
+
+Ein Einstieg in die Funktionen von CloudWatch sind die eingebauen Dashboards.
+Zeigen Sie mindestens die Dashboards für EC2 und Lambda.
 
 ## EC2 Dashboard erstellen
+
 - Gehen Sie in die CloudWatch-Übersichtsseite
 - Öffnen Sie unter "Metrics" den Explorer
 - Wählen Sie als Template links oben "EC2"
-- Unter "From", wählen Sie den Schlüssel "VpcId" und als Wert den einzigen, der verfügbar ist
+- Unter "From", wählen Sie den Schlüssel "VpcId" und als Wert den einzigen, der
+  verfügbar ist
 
 Es sollten nun eine Reihe von Widgets erscheinen.
 
@@ -16,5 +20,7 @@ Es sollten nun eine Reihe von Widgets erscheinen.
 
 ## EC2 CPU-Alert erstellen
 
-Das Cloudformation-Template in [dieser Datei](./ec2-cw-agent-dashboard-alert.cloudformation.yaml) enthält eine Alert-Definition die auslöst, wenn eine Instanz mehr als 60% Cpu konsumiert. Sie sendet per SNS eine E-Mail.
-
+Das Cloudformation-Template in [dieser
+Datei](./ec2-cw-agent-dashboard-alert.cloudformation.yaml) enthält eine
+Alert-Definition die auslöst, wenn eine Instanz mehr als 60% Cpu konsumiert. Sie
+sendet per SNS eine E-Mail.

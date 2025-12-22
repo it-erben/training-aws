@@ -1,9 +1,11 @@
 # Aufgaben zu AWS Lambda
 
-## Aufgabe 1: Erstellen und Auslösen einer AWS Lambda-Funktion durch ein S3-Ereignis
+## Aufgabe 1: Lambda-Funktion per S3-Ereignis auslösen
 
 ### Erstellen einer neuen Lambda-Funktion
-- Melden Sie sich bei der AWS Management Console an und öffnen Sie den Lambda-Service.
+
+- Melden Sie sich bei der AWS Management Console an und öffnen Sie den
+  Lambda-Service.
 - Klicken Sie auf "Funktion erstellen".
 - Wählen Sie "Ohne Vorgabe erstellen".
 - Geben Sie der Funktion einen Namen, z.B. "S3EventFunction".
@@ -13,6 +15,7 @@
 ![001-basic-settings.png](pictures/010-basic-settings.png)
 
 ### Schreiben des Funktionscodes
+
 - Im Abschnitt "Code" fügen Sie folgenden Code in den Editor ein:
 
 ```python
@@ -46,10 +49,12 @@ def lambda_handler(event, context):
 Klicken Sie danach auf "Deploy"
 
 ### S3-Bucket erstellen
+
 - Gehen Sie zur S3-Konsole.
 - Erstellen Sie einen neuen S3-Bucket mit beliebigem Namen
 
 ### Ereignisquelle hinzufügen
+
 - Wechseln Sie wieder in der Web-Konsole in Ihre Lambda-Funktion
 - Klicken Sie in der Funktionsübersicht auf "Auslöser hinzufügen"
 - Wählen Sie "S3" als Trigger-Typ.
@@ -61,17 +66,20 @@ Klicken Sie danach auf "Deploy"
 
 ![040-trigger-s3.png](pictures/040-trigger-s3.png)
 
-### Test
+### Test (Aufgabe 1)
+
 - Laden Sie eine neue Datei in den S3-Bucket hoch.
 - In der Lambda-Konsole wechseln Sie auf den Reiter "Überwachen".
 - Klicken Sie auf "Cloudwatch-Protokolle anzeigen".
-- Wählen Sie im "Log streams"-Bereich den neuesten (obersten) Log stream aus und prüfen Sie, ob ein Log für das Objekt erscheint.
+- Wählen Sie im "Log streams"-Bereich den neuesten (obersten) Log stream aus und
+  prüfen Sie, ob ein Log für das Objekt erscheint.
 
 - ![050-logstream.png](pictures/050-logstream.png)
 
 ## Aufgabe 2: Funktion Zugriff auf S3-Bucket geben
 
 ### IAM-Rolle anpassen
+
 - Wechseln Sie auf den "Konfiguration"-Tab.
 - Wählen Sie den Reiter "Berechtigungen" aus.
 - Klicken Sie auf Link, der zur Rolle führt
@@ -81,6 +89,7 @@ Klicken Sie danach auf "Deploy"
 - Fügen Sie der Rolle die Policy "AmazonS3FullAccess" hinzu
 
 ### Funktionscode anpassen
+
 - Wechseln Sie zurück in die Lambda-Konsole Ihrer Funktion.
 - Im Reiter "Code", ändern Sie den Funktionscode wie folgt:
 
@@ -120,10 +129,13 @@ def lambda_handler(event, context):
 ```
 
 ### Bereitstellen
+
 - Klicken Sie auf "Deploy".
 
-### Test
+### Test (Aufgabe 2)
+
 - Laden Sie eine neue Datei in den S3-Bucket hoch.
 - In der Lambda-Konsole wechseln Sie auf den Reiter "Überwachen".
 - Klicken Sie auf "Cloudwatch-Protokolle anzeigen".
-- Wählen Sie im "Log streams"-Bereich den neuesten (obersten) Log stream aus und prüfen Sie, ob ein Log für das Objekt erscheint.
+- Wählen Sie im "Log streams"-Bereich den neuesten (obersten) Log stream aus und
+  prüfen Sie, ob ein Log für das Objekt erscheint.

@@ -1,11 +1,12 @@
 # Auto Scaling Group und Load Balancer erstellen
 
-In dieser Übungsaufgabe erstellen wir eine VPC über 2 Availability Zones, eine Auto Scaling Group sowie einen Load Balancer.
+In dieser Übungsaufgabe erstellen wir eine VPC über 2 Availability Zones, eine
+Auto Scaling Group sowie einen Load Balancer.
 
 ## VPC erstellen
 
-Erstellen Sie wie in der vorletzten Aufgabe eine VPC – dieses Mal aber über 2 AZs.
-Nennen Sie die VPC "Webserver".
+Erstellen Sie wie in der vorletzten Aufgabe eine VPC – dieses Mal aber über 2
+AZs. Nennen Sie die VPC "Webserver".
 
 ![000-create-vpc.png](images/000-create-vpc.png)
 
@@ -17,7 +18,8 @@ Gehen Sie in der EC2-Webkonsole in das Startvorlagen-Menü.
 
 ---
 
-Benennen Sie das Template und aktivieren Sie die Anleitung zur Einrichtung für Auto Scaling.
+Benennen Sie das Template und aktivieren Sie die Anleitung zur Einrichtung für
+Auto Scaling.
 
 ![002-template-wizard.png](images/002-template-wizard.png)
 
@@ -30,7 +32,8 @@ Wählen Sie Amazon Linux 2023 als AMI und t3.micro als Instance Type.
 
 ---
 
-Nehmen Sie in den Netzwerkeinstellungen kein Subnetz auf. Legen Sie aber eine Sicherheitsgruppe an, für die Sie die VPC "Webserver" auswählen.
+Nehmen Sie in den Netzwerkeinstellungen kein Subnetz auf. Legen Sie aber eine
+Sicherheitsgruppe an, für die Sie die VPC "Webserver" auswählen.
 
 ![005-template-wizard-network.png](images/005-template-wizard-network.png)
 
@@ -42,12 +45,13 @@ Nennen Sie die Sicherheitsgruppe "Webserver".
 
 ---
 
-Aktivieren Sie in den erweiterten Netzwerkeinstellungen die automatische Vergabe einer öffentlichen IP.
-![008-ip.png](images/008-ip.png)
+Aktivieren Sie in den erweiterten Netzwerkeinstellungen die automatische Vergabe
+einer öffentlichen IP. ![008-ip.png](images/008-ip.png)
 
 ---
 
-In den erweiterten Einstellungen ganz unten benötigen wir ein Benutzerdaten-Skript.
+In den erweiterten Einstellungen ganz unten benötigen wir ein
+Benutzerdaten-Skript.
 
 ![007-template-wizard-userdata.png](images/007-template-wizard-userdata.png)
 
@@ -69,7 +73,7 @@ echo "<html><h1>Hello from $(hostname)</h1></html>" > /var/www/html/index.html
 
 Sie können nun das Anlegen der Vorlage abschließen.
 
-## Auto Scaling Group und Load Balancer erstellen 
+## Auto Scaling Group und Load Balancer einrichten
 
 Gehen Sie in der EC2-Webkonsole in das Auto Scaling-Menü.
 
@@ -85,7 +89,8 @@ Gehen Sie nun zum nächsten Schritt.
 
 ---
 
-Wählen Sie die Webserver-VPC aus und weiter unten die beiden öffentlichen Subnetze.
+Wählen Sie die Webserver-VPC aus und weiter unten die beiden öffentlichen
+Subnetze.
 
 ![012-az-select.png](images/012-az-select.png)
 
@@ -93,7 +98,8 @@ Gehen Sie nun zum nächsten Schritt.
 
 ---
 
-Wählen Sie die Option, einen neuen Loadbalancer zu erstellen. Als Typ wählen Sie "Application Load Balancer", als Schema "Internet Facing".
+Wählen Sie die Option, einen neuen Loadbalancer zu erstellen. Als Typ wählen Sie
+"Application Load Balancer", als Schema "Internet Facing".
 
 ![013-create-lb.png](images/013-create-lb.png)
 
@@ -105,7 +111,8 @@ Gehen Sie nun zum nächsten Schritt.
 
 ---
 
-Geben Sie als gewünschte Kapazität und gewünschte Mindestkapazität jeweils 2 ein.
+Geben Sie als gewünschte Kapazität und gewünschte Mindestkapazität jeweils 2
+ein.
 
 ![015-counts.png](images/015-counts.png)
 
@@ -113,23 +120,26 @@ Sie können nun fortfahren, bis die Auto Scaling Group fertig angelegt ist.
 
 ## Security Group des Load Balancers anpassen
 
-Gehen Sie in der EC2-Webkonsole in das Load Balancer-Menü. Wählen Sie den Loadbalancer aus und klicken Sie im Tab "Sicherheit" auf "Bearbeiten".
+Gehen Sie in der EC2-Webkonsole in das Load Balancer-Menü. Wählen Sie den
+Loadbalancer aus und klicken Sie im Tab "Sicherheit" auf "Bearbeiten".
 
 ![020-edit-sg.png](images/020-edit-sg.png)
 
 ---
 
-Nehmen Sie zu den Sicherheitsgruppen des Loadbalancers die Webserver-Sicherheitsgruppe hinzu.
+Nehmen Sie zu den Sicherheitsgruppen des Loadbalancers die
+Webserver-Sicherheitsgruppe hinzu.
 
 ![021-edit-sg-select.png](images/021-edit-sg-select.png)
 
 ---
 
-Zuletzt können Sie nun die URL des Load Balancer kopieren, wenn Sie in die Detailansicht gehen und DNS-Namen kopieren.
+Zuletzt können Sie nun die URL des Load Balancer kopieren, wenn Sie in die
+Detailansicht gehen und DNS-Namen kopieren.
 
 ![022-dns-name.png](images/022-dns-name.png)
 
 ## Test
 
-Rufen Sie die URL auf. Verwenden Sie dabei aber auf jeden Fall HTTP als Protokoll, **nicht** HTTPS!
-
+Rufen Sie die URL auf. Verwenden Sie dabei aber auf jeden Fall HTTP als
+Protokoll, **nicht** HTTPS!

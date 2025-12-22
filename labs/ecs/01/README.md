@@ -1,6 +1,7 @@
 # Übungsaufgabe zum Elastic Container Service (ECS)
 
-In dieser Aufgabe erstellen Sie einen ECS-Cluster und installieren darauf einen Fargate-Service mit dem NGINX-Webserver.
+In dieser Aufgabe erstellen Sie einen ECS-Cluster und installieren darauf einen
+Fargate-Service mit dem NGINX-Webserver.
 
 ## Cluster anlegen
 
@@ -20,13 +21,15 @@ Aktivieren Sie außerdem Container Insights für mehr Logs und Metriken.
 
 ## Aufgabendefinition erstellen
 
-Gehen Sie nun zurück in die Hauptseite der ECS-Webkonsole. Gehen Sie zu den Aufgabendefinitionen und legen Sie eine neue an.
+Gehen Sie nun zurück in die Hauptseite der ECS-Webkonsole. Gehen Sie zu den
+Aufgabendefinitionen und legen Sie eine neue an.
 
 ![040-taskdefinition-create.png](images/040-taskdefinition-create.png)
 
 ---
 
-Vergeben Sie einen sinnvollen Namen und wählen Sie eine Kapazität von 0.25 vCPU und 0.5 GB.
+Vergeben Sie einen sinnvollen Namen und wählen Sie eine Kapazität von 0.25 vCPU
+und 0.5 GB.
 
 ![050-td-capacity.png](images/050-td-capacity.png)
 
@@ -38,19 +41,21 @@ Schließen Sie nun die Erstellung der Aufgabendefinition ab.
 
 ## Service erstellen
 
-Gehen Sie in die Detailansicht der neu angelegten Aufgabendefinition. Klicken Sie auf "Bereitstellen" und dann auf "Service erstellen".
+Gehen Sie in die Detailansicht der neu angelegten Aufgabendefinition. Klicken
+Sie auf "Bereitstellen" und dann auf "Service erstellen".
 
 ![070-create-service.png](images/070-create-service.png)
 
 ---
 
-Vergeben Sie einen sinnvollen Namen. 
+Vergeben Sie einen sinnvollen Namen.
 
 ![080-create-service-name.png](images/080-create-service-name.png)
 
 ---
 
-Wählen Sie eine VPC mit einem öffentlichen Subnetz. Wählen Sie daraufhin nur öffentliche Subnetze aus. Aktivieren Sie die öffentliche IP.
+Wählen Sie eine VPC mit einem öffentlichen Subnetz. Wählen Sie daraufhin nur
+öffentliche Subnetze aus. Aktivieren Sie die öffentliche IP.
 
 ![090-create-service-setting.png](images/090-create-service-setting.png)
 
@@ -58,10 +63,12 @@ Schließen Sie nun das Anlegen des Services ab.
 
 ## Service testen
 
-Gehen Sie zurück in die Clusterübersicht und wechseln Sie in den Tab "Aufgaben". Klicken Sie auf die Aufgabe, die der Service erzeugt hat.
+Gehen Sie zurück in die Clusterübersicht und wechseln Sie in den Tab "Aufgaben".
+Klicken Sie auf die Aufgabe, die der Service erzeugt hat.
 
 ![100-tasks.png](images/100-tasks.png)
 
-In der Detailansicht können Sie die öffentliche IP-Adresse verwenden, um den Service zu testen.
+In der Detailansicht können Sie die öffentliche IP-Adresse verwenden, um den
+Service zu testen.
 
 ![110-IP.png](images/110-IP.png)
