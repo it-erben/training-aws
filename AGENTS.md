@@ -133,3 +133,7 @@ Ein neues Lab folgt dem Layout des Dienstes, unter dem es liegt.
 - Die Labs sprechen die deutsche AWS Console an. Ändert AWS eine Beschriftung,
   stimmen Klickpfad und Screenshot nicht mehr überein; beides zusammen
   aktualisieren.
+- **Die CI läuft auf zwei Plattformen.** `.gitlab-ci.yml` bindet die
+  GitLab-Komponenten ein, `.github/workflows/ci.yml` ruft `lint.yml` aus
+  `it-erben/ci`. Auf GitHub prüft die Pipeline bei Pull Requests und
+  bei Pushes auf `main`.
